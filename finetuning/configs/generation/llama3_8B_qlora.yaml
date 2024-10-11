@@ -1,12 +1,16 @@
-# Model Arguments
+# Config for running the InferenceRecipe in generate.py to generate output from an LLM
+#
+# To launch, run the following command from root torchtune directory:
+#    tune run generate --config generation
+
+# Model arguments
 model:
   _component_: torchtune.models.llama3.llama3_8b
 
 checkpointer:
-  _component_: torchtune.utils.FullModelMetaCheckpointer
+  _component_: torchtune.training.FullModelHFCheckpointer
   checkpoint_dir: tmp/Meta-Llama-3-8B-Instruct/
   checkpoint_files: [meta_model_0.pt]
-  recipe_checkpoint: null
   output_dir: tmp/Meta-Llama-3-8B-Instruct/
   model_type: LLAMA3
 
@@ -19,11 +23,16 @@ seed: 1234
 tokenizer:
   _component_: torchtune.models.llama3.llama3_tokenizer
   path: tmp/Meta-Llama-3-8B-Instruct/original/tokenizer.model
+  max_seq_len: null
 
 # Generation arguments; defaults taken from gpt-fast
-prompt: "Hello, my name is"
-max_new_tokens: 256
+prompt: "Tell me a joke?"
+instruct_template: null
+chat_format: null
+max_new_tokens: 300
 temperature: 0.6 # 0.8 and 0.6 are popular values to try
 top_k: 300
+
+enable_kv_cache: True
 
 quantizer: null

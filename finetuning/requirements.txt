@@ -1,0 +1,6 @@
+torch
+torchvision
+torchao
+ray
+ray[tune]
+torchtune

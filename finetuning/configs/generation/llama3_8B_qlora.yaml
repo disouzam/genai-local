@@ -6,7 +6,6 @@ checkpointer:
   _component_: torchtune.utils.FullModelMetaCheckpointer
   checkpoint_dir: tmp/Meta-Llama-3-8B-Instruct/
   checkpoint_files: [meta_model_0.pt]
-  # adapter_checkpoint: adapter_0.pt
   recipe_checkpoint: null
   output_dir: tmp/Meta-Llama-3-8B-Instruct/
   model_type: LLAMA3

@@ -7,11 +7,7 @@
 
 ## Enable
 
-<chrome://flags>
-
-- Vulkan
-- Unsafe WebGPU Support
-- Override software rendering list
+google-chrome-beta --enable-unsafe-webgpu --ignore-gpu-blocklist --enable-features=Vulkan,VulkanFromANGLE,DefaultANGLEVulkan
 
 ## Test
 

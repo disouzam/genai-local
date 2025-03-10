@@ -6,7 +6,7 @@
 
 ## Install
 
-pyenv virtualenv 3.10 genai-local
+pyenv virtualenv 3.10 genai-finetuning
 
 <https://github.com/pytorch/torchtune>
 pip install -r requirements.txt

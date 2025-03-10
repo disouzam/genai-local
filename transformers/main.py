@@ -21,5 +21,5 @@ prompt = prompt.format(system=system, insaan=insaan)
 
 inputs = tokenizer(prompt, return_tensors="pt", return_attention_mask=True).to("cuda")
 
-model.generate(**inputs, max_length=3084, top_p=0.95, do_sample=True, temperature=0.7, use_cache=True, streamer=streamer)
+model.generate(**inputs, max_length=3084, top_p=0.95, do_sample=True, temperature=0.7, use_cache=False, streamer=streamer)
 
